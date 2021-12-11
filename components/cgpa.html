@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      body{
+        font-family: sans-serif;
+        position:fixed;
+        top:0;
+        bottom:0;
+        left:0;
+        right:0;
+      }
+      h1{
+        position:relative;
+        left:34%;
+        padding-top:5%;
+        font-size:300%;
+        padding-bottom:5%;
+      }
+      .main{
+        position:relative;
+        left: 35%;
+
+        font-size: 200%;
+      }
+      input{
+        width:20%;
+      }
+      button{
+        width:10%;
+        position:relative;
+        left:5%;
+        border-radius:24px;
+        cursor:pointer;
+      }
+      #last_sem_cgpa{
+        margin-bottom:3%;
+      }
+      #result,#remarks{
+        font-size:70%;
+        position:relative;
+        left:-100%%;
+      }
+        @media (max-width: 1028px){
+          .main{
+            left:20%;
+          }
+          h1{
+            left:18%;
+          }
+          button{
+            width:25%;
+          margin-top:10%;
+          left:-1%;
+          }
+          input
+          {
+            width:30%;
+          }
+          #remarks{
+            left:-10%;
+            text-align:center;
+            font-size:60%;
+            width:70%;
+          }
+        }
+    </style>
+  </head>
+  <body>
+
+  <h1>Calculate CGPA</h1>
+  <div class="main">
+    <label for="">CPGA till last Semster: </label><br>
+    <input id="last_sem_cgpa" type="text" name="" value="" placeholder="0.00"><br>
+    <label class="second_label" for="">This Semster SGPA: </label><br>
+    <input id="this_sem_sgpa" type="text" name="" value="" placeholder="0.00"><br>
+    <button id="calculate" type="button" name="button">Calculate</button>
+    <h3 id="result"></h3>
+    <h4 id="remarks"></h4>
+
+  </div>
+
+  <script src="../js/cgpa_calculator.js" charset="utf-8"></script>
+
+  </body
+</html>

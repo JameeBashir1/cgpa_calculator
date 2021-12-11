@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      body{
+        font-family: sans-serif;
+      }
+      h1,h3{
+        position:relative;
+      }
+      h1{
+        left: 31%;
+      }
+      h3{
+        left:30%;
+      }
+      .main{
+        position:relative;
+        left:32%;
+        font-size:150%;
+        padding-top:2%;
+      }
+      button{
+        border-radius:24px;
+        width:10%;
+      }
+      #it_result,#remarks{
+        position:relative;
+        left:-5%;
+        top:-10%;
+      }
+      @media (max-width: 1028px){
+        .main{
+          left:10%;
+        }h1,h3{
+          left:10%;
+          width:80%;
+        }
+        button{
+          width:30%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>CALCULATE SGPA (IT)</h1>
+    <h3>Note : Enter Pointer Value only ( Example: For 71 to 80 , Enter 8 )</h3>
+
+    <div class="main">
+      <label for="">Data Structures</label>
+      <br> <input type="text" name="" value="" id="sub1" placeholder="Out of 10"><br>
+      <label for="">Data Structures Lab</label>
+      <br> <input type="text" name="" value="" id="sub2" placeholder="Out of 10"><br>
+      <label for="">Discrete Mathematics</label>
+      <br> <input type="text" name="" value="" id="sub3" placeholder="Out of 10"><br>
+      <label for="">Electronics</label>
+      <br> <input type="text" name="" value="" id="sub4" placeholder="Out of 10"><br>
+      <label for="">Electronics Lab</label>
+      <br> <input type="text" name="" value="" id="sub5" placeholder="Out of 10"><br>
+      <label for="">Object Oriented Programming</label>
+      <br> <input type="text" name="" value="" id="sub6" placeholder="Out of 10"><br>
+      <label for="">Object Oriented Programming Lab</label>
+      <br> <input type="text" name="" value="" id="sub7" placeholder="Out of 10"><br>
+      <label for="">Signal and Systems</label>
+      <br> <input type="text" name="" value="" id="sub8" placeholder="Out of 10"><br>
+      <label for="">Software Engineering</label>
+      <br> <input type="text" name="" value="" id="sub9" placeholder="Out of 10">
+      <br><br>
+      <button id="btn" type="button" name="button">Calculate SGPA</button>
+      <br><br>
+      <h3 id="it_result"></h3>
+      <h4 id="remarks"></h4>
+
+    </div>
+
+    <script type="text/javascript">
+      document.getElementById('btn').addEventListener('click',start);
+      function start() {
+        let Subject1 = document.getElementById('sub1').value;
+        let Subject2 = document.getElementById('sub2').value;
+        let Subject3 = document.getElementById('sub3').value;
+        let Subject4 = document.getElementById('sub4').value;
+        let Subject5 = document.getElementById('sub5').value;
+        let Subject6 = document.getElementById('sub6').value;
+        let Subject7 = document.getElementById('sub7').value;
+        let Subject8 = document.getElementById('sub8').value;
+        let Subject9 = document.getElementById('sub9').value;
+
+        var res1 = Number(Subject1)*4;
+        var res2 = Number(Subject2);
+        var res3 = Number(Subject3)*4;
+        var res4 = Number(Subject4)*4;
+        var res5 = Number(Subject5);
+        var res6 = Number(Subject6)*4;
+        var res7 = Number(Subject7);
+        var res8 = Number(Subject8)*3;
+        var res9 = Number(Subject9)*3;
+
+        var res = (Number(res1) + Number(res2) + Number(res3) + Number(res4) + Number(res5) + Number(res6) + Number(res7) + Number(res8) + Number(res9))/25;
+        document.getElementById('it_result').innerHTML ="Your SGPA for this semester is : "+ res;
+
+        if(res<=5 && res>4){
+          document.getElementById('remarks').innerHTML = "Remarks: You Need To Work Hard";
+        }else if(res<=8 && res>5){
+          document.getElementById('remarks').innerHTML = "Remarks: You are Average (Try to work little Harder ! )";
+        }else if(res<=9 && res>8){
+          document.getElementById('remarks').innerHTML = "Remarks: You are Above Average ! Keep It Up";
+        }else if(res<=10 && res >9){
+          document.getElementById('remarks').innerHTML = "Remarks: Wooooh! Dude You are Awesome! Try to Maintain it";
+        }else if (res<=4 || res >10){
+          document.getElementById('remarks').innerHTML = "Remarks: Are You Serious? Enter the Actual Details Man !"
+        }
+      }
+
+    </script>
+  </body>
+</html>
